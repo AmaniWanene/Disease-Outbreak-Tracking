@@ -147,7 +147,7 @@ The model's performance is evaluated through metrics such as accuracy, precision
 
 ### 6. Deployment
 
-This pproject is deployed here (https://disease-csv-visual.vercel.app/)
+This project is deployed here (https://disease-csv-visual.vercel.app/)
 
 ### 7. How to use this Notebook
 
