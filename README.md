@@ -9,19 +9,19 @@
    
 # Disease-Outbreak-Tracking
 
-### Business Understanding
+### 1. Business Understanding
 
 ***Disease Detection System***
 
-*Business Overview*
+*1.1 Business Overview*
 
 This detection system leverages social media data to track outbreaks of influenza and tuberculosis, two significant public health threats with widespread respiratory impacts. By analyzing real-time posts for early signs of disease clusters, the system enables WHO and health agencies to identify potential outbreaks quickly. This proactive approach aims to reduce disease spread, improve response times, and ultimately lower morbidity and mortality rates.
 
-*Problem Statement*
+*1.2 Problem Statement*
 
 Early detection of influenza and tuberculosis outbreaks is critical, but official reporting often lags behind the initial spread. Social media data could provide an early warning system, but requires AI-powered analysis to identify and track disease trends before they become full-blown epidemics.
 
-*Objectives*
+*1.3 Objectives*
 
 Our main objective is early detection of potential influenza and tuberculosis outbreaks using real time twitter data. Our other objectives include;
 
@@ -32,7 +32,7 @@ Our main objective is early detection of potential influenza and tuberculosis ou
 4. Provide early alerts to public health organizations and government agencies to 
    enable faster response and intervention.
 
- *Proposed Solutions*
+ *1.4 Proposed Solutions*
    
  1. Collect real-time social media data from Twitter using Twibot: and keyword- 
     based filtering.
@@ -82,7 +82,7 @@ Recall 0.90
   Citizen stakeholders who benefit from faster outbreak response and containment
 
 
-### Data Understanding
+### 2. Data Understanding
 Our data originates from twitter and was scrapped using Twibot. We have a total of 20 columns and below is the description.
 
 id - Unique identifier for each tweet entry in the dataset.
@@ -122,7 +122,7 @@ source_file - The name of tje file a tweet data entry originated from.
 combined_timestamp - The timestamp cmbining both the date and time of processing or entry.
 
 
-### Data Preparation
+### 3. Data Preparation
 
 Data preparation focuses on cleaning and preprocessing the raw social media data. This includes:
 
@@ -137,15 +137,19 @@ Data preparation focuses on cleaning and preprocessing the raw social media data
    
 This step ensures that the data is structured, relevant, and ready for model input.
 
-### Modelling
+### 4. Modelling
 
 Various machine learning models are applied to analyze the cleaned data. Models are evaluated based on their accuracy in detecting outbreak-related posts, as well as their ability to identify trends over time. Techniques such as natural language processing (NLP) are used to interpret text data and classify posts according to potential outbreak relevance.
 
-### Evaluation
+### 5. Evaluation
 
 The model's performance is evaluated through metrics such as accuracy, precision, and recall, helping to determine its effectiveness in detecting early warning signs. Additionally, insights such as detected trends and potential high-risk locations are analyzed to gauge the model's practical value for public health applications.
 
-### How to use this Notebook
+### 6. Deployment
+
+This pproject is deployed here (https://disease-csv-visual.vercel.app/)
+
+### 7. How to use this Notebook
 
 1. Clone this repository.
    
@@ -153,7 +157,7 @@ The model's performance is evaluated through metrics such as accuracy, precision
    
 3. Run each cell sequentially to follow the project's workflow, from data preparation to model evaluation.
 
- ### Conclusion
+ ### 8. Conclusion
 
 This project demonstrates how AI-driven analysis of social media data can support public health initiatives by providing early warning signals of disease outbreaks, potentially enabling faster and more effective response efforts.
   
