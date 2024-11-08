@@ -5,7 +5,7 @@
 1. Faith Watene wanguufaith@gmail.com/0797921974
 2. Amani Wanene /0711833383
 3. Evans Oyugi /0794604048
-4. Catherine Wangui /0727151179
+4. Catherine Wangui jangkatrina@gmail.com/0727151179
    
 # Disease-Outbreak-Tracking
 
