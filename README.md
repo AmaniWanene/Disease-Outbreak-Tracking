@@ -53,8 +53,9 @@ Our main objective is early detection of potential influenza and tuberculosis ou
 
 ***Metrics of Success***
 
-Accuracy 0.90%
-Recall 0.90%
+Accuracy 0.90
+
+Recall 0.90
 
 **StakeHolders**
 
