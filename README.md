@@ -53,20 +53,9 @@ Our main objective is early detection of potential influenza and tuberculosis ou
 
 ***Metrics of Success***
 
-F1 Score for Disease Outbreak Classification: Measures the model's balance between precision and recall in detecting outbreaks.
-
-**Target: F1 Score > 0.85**
-
-Precision of Outbreak Detection: Evaluates the model's accuracy in identifying actual outbreak-related data among all detected cases, minimizing false alarms.
-
-**Target: Precision > 0.90**
-
-AUC-ROC (Area Under the Receiver Operating Characteristic Curve): Indicates the model's ability to distinguish between outbreak and non-outbreak data with high reliability.
-**Target: AUC-ROC > 0.90**
-
-Accuracy in Predicting Outbreak Magnitude: Reflects the model’s ability to accurately forecast the size or scale of an outbreak, essential for effective resource allocation.
-
-**Target: Accuracy > 80%**
+1. `rmse` :<= 2.50 else `NEEDS_IMPROVEMENT`
+2. `mae` :<= 0.50 else `NEEDS_IMPROVEMENT`  
+3. `R²`: >= 0.95 else `NEEDS_IMPROVEMENT`
 
 **StakeHolders**
 
@@ -135,6 +124,39 @@ combined_timestamp - The timestamp cmbining both the date and time of processing
 
 ### Data Preparation
 
+Data preparation focuses on cleaning and preprocessing the raw social media data. This includes:
+
+ - **Text Preprocessing:** Removing noise, normalizing text, filtering for 
+     keywords.
+   
+ - **Handling Missing Values:** Ensuring data consistency and filling gaps as 
+     needed.
+   
+ - **Keyword Filtering:** Focusing on disease-related terms that may signal 
+     outbreaks.
+   
+This step ensures that the data is structured, relevant, and ready for model input.
+
+### Modelling
+
+Various machine learning models are applied to analyze the cleaned data. Models are evaluated based on their accuracy in detecting outbreak-related posts, as well as their ability to identify trends over time. Techniques such as natural language processing (NLP) are used to interpret text data and classify posts according to potential outbreak relevance.
+
+### Evaluation
+
+The model's performance is evaluated through metrics such as accuracy, precision, and recall, helping to determine its effectiveness in detecting early warning signs. Additionally, insights such as detected trends and potential high-risk locations are analyzed to gauge the model's practical value for public health applications.
+
+### How to use this Notebook
+
+1. Clone this repository.
+   
+2. Install any required dependencies listed in the notebook.
+   
+3. Run each cell sequentially to follow the project's workflow, from data preparation to model evaluation.
+
+ ### Conclusion
+
+This project demonstrates how AI-driven analysis of social media data can support public health initiatives by providing early warning signals of disease outbreaks, potentially enabling faster and more effective response efforts.
+  
 
 
 
