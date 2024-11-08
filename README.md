@@ -53,9 +53,8 @@ Our main objective is early detection of potential influenza and tuberculosis ou
 
 ***Metrics of Success***
 
-1. `rmse` :<= 2.50 else `NEEDS_IMPROVEMENT`
-2. `mae` :<= 0.50 else `NEEDS_IMPROVEMENT`  
-3. `R²`: >= 0.95 else `NEEDS_IMPROVEMENT`
+Accuracy 0.90%
+Recall 0.90%
 
 **StakeHolders**
 
