@@ -189,7 +189,7 @@ Kindly don't hesitate to reach out to the team if you have any questions.
 ## Repository Structure
 
 ```
-Sentiment Analysis-Paris Olympics 2024/
+Disease-Outbreak-Tracking/
 │
 └── Project Files/
     ├── .ipynb_checkpoints
