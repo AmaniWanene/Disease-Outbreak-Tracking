@@ -1,184 +1,206 @@
-### Capstone Project
-### Group 8
 
-**Members**
-1. Faith Watene wanguufaith@gmail.com/0797921974
-2. Amani Wanene /0711833383
-3. Evans Oyugi /0794604048
-4. Catherine Wangui jangkatrina@gmail.com/0727151179
-   
-# Disease-Outbreak-Tracking
+# Disease Detection System
 
-### 1. Business Understanding
+![alt text](Images/Tuberculosis.jpg)
 
-***Disease Detection System***
 
-*1.1 Business Overview*
+## Table of Contents
 
-This detection system leverages social media data to track outbreaks of influenza and tuberculosis, two significant public health threats with widespread respiratory impacts. By analyzing real-time posts for early signs of disease clusters, the system enables WHO and health agencies to identify potential outbreaks quickly. This proactive approach aims to reduce disease spread, improve response times, and ultimately lower morbidity and mortality rates.
+1. [Business Understanding](#business-understanding)
+   - [Overview](#overview)
+   - [Goal](#goal)
+   - [Objectives](#objectives)
+   - [Stakeholders](#stakeholders)
 
-*1.2 Problem Statement*
+2. [Data Understanding](#data-understanding)
 
-Early detection of influenza and tuberculosis outbreaks is critical, but official reporting often lags behind the initial spread. Social media data could provide an early warning system, but requires AI-powered analysis to identify and track disease trends before they become full-blown epidemics.
+3. [Data Preparation](#data-preparation)
 
-*1.3 Objectives*
+4. [Modeling](#modeling)
 
-Our main objective is early detection of potential influenza and tuberculosis outbreaks using real time twitter data. Our other objectives include;
+5. [Conclusion](#conclusion)
 
-1. Track the spread patterns of these diseases by monitoring symptom-related 
-   keywords and geospatial data from social posts.  
-2. Identify high-risk areas for outbreaks before they are officially reported.  
-3. Develop predictive models to forecast the trajectory of potential outbreaks.  
-4. Provide early alerts to public health organizations and government agencies to 
-   enable faster response and intervention.
+6. [Recommendations](#recommendations)
 
- *1.4 Proposed Solutions*
-   
- 1. Collect real-time social media data from Twitter using Twibot: and keyword- 
-    based filtering.
-2. Apply natural language processing (NLP) techniques to detect mentions of 
-   disease symptoms, concerns, and outbreak-related keywords.
-3. Conduct sentiment analysis to identify posts indicating fear, panic or growing 
-   anxiety around potential outbreaks.
-4. Leverage machine learning models like SVMs and neural networks to classify 
-   social posts as related to disease outbreaks or not.
-5. Utilize anomaly detection algorithms to identify unusual spikes in outbreak- 
-   related keywords and phrases.
-6. Map the geospatial and temporal data to visualize disease spread patterns and 
-   high-risk clusters.
-7. Validate social media-derived insights against official health reports to 
-   ensure accuracy.
-8. Develop predictive models to forecast outbreak trajectories and build an 
-   automated alert system for public health authorities.
+7. [Next Steps](#next-steps)
 
-***Metrics of Success***
+8. [Deployment](#deployment)
+   - [Installation](#installation)
 
-Accuracy 0.90
+9. [Libraries and Tools Used](#libraries-and-tools-used)
 
-Recall 0.90
+10. [License](#license)
 
-**StakeHolders**
+11. [Contributing Members](#contributing-members)
 
+12. [Contacts](#contacts)
+
+13. [Repository Structure](#repository-structure)
+
+## Business Understanding
+
+**Overview**
+
+This AI-driven detection system leverages social media data to track outbreaks of influenza and tuberculosis, two significant public health threats with widespread respiratory impacts. By analyzing real-time posts for early signs of disease clusters, the system enables WHO and health agencies to identify potential outbreaks quickly. This proactive approach aims to reduce disease spread, improve response times, and ultimately lower morbidity and mortality rates
+
+**Goal**
+Early detection of potential influenza and tuberculosis outbreaks using
+real-time twitter data.
+ 
+
+**Objectives**
+
+1. Track the spread patterns of these diseases by monitoring symptom-related keywords
+2. Develop predictive models to forecast the trajectory of potential outbreaks.
+3. Provide early alerts to public health organizations and government agencies to enable faster response and intervention.
+
+## Stakeholders
 1. World Health Organization (WHO)
-  Global health agency responsible for coordinating pandemic preparedness and 
-  response
+Global health agency responsible for coordinating pandemic preparedness and response
 
 2. National/Regional Public Health Organizations
-  Disease control centers, epidemiology departments in countries/regions
+Disease control centers, epidemiology departments in countries/regions
 
 3. Emergency Response Agencies
-  Disaster management authorities, emergency medical teams
+Disaster management authorities, emergency medical teams
 
 4. Government Policymakers
-  Health ministers, legislators responsible for public health policies
+Health ministers, legislators responsible for public health policies
 
 5. Healthcare Providers
-  Hospitals, clinics, and other medical facilities that need early warning
+Hospitals, clinics, and other medical facilities that need early warning
 
 6. Public Health Researchers and Epidemiologists
-  Academics and analysts studying disease trends and mitigation strategies
+Academics and analysts studying disease trends and mitigation strategies
 
 7. The General Public
-  Citizen stakeholders who benefit from faster outbreak response and containment
+Citizen stakeholders who benefit from faster outbreak response and containment
 
+## Data Understanding
 
-### 2. Data Understanding
-Our data originates from twitter and was scrapped using Twibot. We have a total of 20 columns and below is the description.
+Data Sources
+The data originates twitter.The data was scraped using `Twibot`
+Below is the description of the column names
+ 
+## Data Preparation
 
-id - Unique identifier for each tweet entry in the dataset.
+The data processing step involved analyzing and cleaning a merged dataset of tweets related to the  Flu and Tuberculosis Tweets originally composed of multiple CSV files. A DataUnderstanding class was created to examine the dataset revealing missing values and discrepancies as well as a large number of apparent duplicates most of which were false positives due to partial similarities.
+ 
+ ## Modeling
+In our model evaluation process, we tested both Random Forest and BiLSTM models, focusing on recall and accuracy to determine which model generalizes best to unseen data.
 
-tweetText - Text content of the tweet.
+**Recall:**
 
-tweetURL - URL link to the original tweet on Twitter.
+The Random Forest model achieved the highest recall on the training set (1.0000) and a strong recall on the test set (0.8368). However, BiLSTM outperformed it on the test set with a recall of 0.9150, indicating better retention of true positives in unseen data.
+BiLSTM also had excellent recall on the training set (0.9886) and demonstrated its robustness with a high recall score of 0.9150 on the test set.
+Conclusion: BiLSTM had the best generalization in terms of recall on the test set.
+**Accuracy:**
 
-type - The kind of social media post(tweets in our case)
+The Random Forest model achieved perfect accuracy on the training set (1.0000) and a high accuracy of 0.9823 on the test set.
+BiLSTM performed slightly better, with an accuracy of 0.9984 on the training set and 0.9858 on the test set.
+Conclusion: BiLSTM outperformed Random Forest slightly in terms of test set accuracy.
+ 
 
-tweetAuthor - The person/ organisation that posted the tweet.
-
-handle - The username of the tweet author.
-
-geo - The provided geographical location related to the tweet.
-
-mentions - Other twitter users mentioned in the tweet.
-
-hashtags - The hashtags used in the tweet.
-
-replyCount - The number of replies a tweet has.
-
-likeCount - The number of likes a tweet has.
-
-views - The number of views a tweet has.
-
-bookmarkCount - The number of times a tweet has been bookmarked.
-
-createdAt - The day and time the tweet was published.
-
-allMediaURL - The URL to all media content related to the tweet.
-
-videoURL - The URL for only videos related to the tweet.
-
-source_file - The name of tje file a tweet data entry originated from.
-
-combined_timestamp - The timestamp cmbining both the date and time of processing or entry.
-
-
-### 3. Data Preparation
-
-Data preparation focuses on cleaning and preprocessing the raw social media data. This includes:
-
- - **Text Preprocessing:** Removing noise, normalizing text, filtering for 
-     keywords.
-   
- - **Handling Missing Values:** Ensuring data consistency and filling gaps as 
-     needed.
-   
- - **Keyword Filtering:** Focusing on disease-related terms that may signal 
-     outbreaks.
-   
-This step ensures that the data is structured, relevant, and ready for model input.
-
-### 4. Modelling
-
-Various machine learning models are applied to analyze the cleaned data. Models are evaluated based on their accuracy in detecting outbreak-related posts, as well as their ability to identify trends over time. Techniques such as natural language processing (NLP) are used to interpret text data and classify posts according to potential outbreak relevance.
-
-### 5. Evaluation
-
-The model's performance is evaluated through metrics such as accuracy, precision, and recall, helping to determine its effectiveness in detecting early warning signs. Additionally, insights such as detected trends and potential high-risk locations are analyzed to gauge the model's practical value for public health applications.
-
-### 6. Deployment
-
-This project is deployed here (https://disease-csv-visual.vercel.app/)
-
-### 7. How to use this Notebook
-
-1. Clone this repository.
-   
-2. Install any required dependencies listed in the notebook.
-   
-3. Run each cell sequentially to follow the project's workflow, from data preparation to model evaluation.
-
- ### 8. Conclusion
-
-This project demonstrates how AI-driven analysis of social media data can support public health initiatives by providing early warning signals of disease outbreaks, potentially enabling faster and more effective response efforts.
+## Conclusion
+Given both recall and accuracy metrics on the test set, the BiLSTM model stands out as the best-performing model. Its strong performance on the test set suggests better generalization, making it the most reliable choice for accurately predicting on new data.
   
 
+## Recommendations
+1. Track model performance metrics over time
+2. Set up alerts for performance degradation
+3. Regularly tune and retrain your machine learning models to maintain high accuracy, especially as new data trends emerge.
+
+## Next steps
+1. Incorporate Related Social Media Platforms: Expand data collection to other platforms (like Facebook or Instagram) if applicable. This broadens the dataset and captures a wider public sentiment.
+2. Establish Partnerships with Health Agencies: Partner with health organizations that could benefit from timely disease information, enhancing the project's real-world impact.
+3. Develop Clear Data Retention Policies: Define how long data will be stored, particularly sensitive information like location, to ensure ethical data handling.
+4. Integrate Disease Forecasting Models: For longer-term insights, experiment with time-series forecasting models, such as ARIMA, Prophet, or LSTM, to predict future trends based on historical data.
+
+ 
+### Deployment
+Check out our app by clicking on this button [App Here](https://disease-csv-visual.vercel.app/)
+
+### Installation 
+To run the application locally, follow the following steps:
+
+**Clone the repository**
+
+**https:**
+```
+git clone https://github.com/AmaniWanene/Disease-Outbreak-Tracking.git
+```
+**ssh:**
+```
+git clone git@github.com:AmaniWanene/Disease-Outbreak-Tracking.git
+```
+**Navigate to the project directory**
+
+```
+cd Disease-Outbreak-Tracking.git
+```
+**Create a virtual environment**
+
+```
+python -m venv vader_env
+```
+**Activate the virtual environment**
+
+**Windows:**
+```
+vader_env\Scripts\activate
+```
+**MacOS/Linux:**
+```
+source vader_env/bin/activate
+```
+**Install dependencies**
+```
+pip install -r requirements.txt
+```
+ 
+
+## 🔗 Libraries and Tools Used
+![numpy](https://img.shields.io/badge/Numpy-777BB4?style=for-the-badge&logo=numpy&logoColor=white)
+![pandas](https://img.shields.io/badge/Pandas-2C2D72?style=for-the-badge&logo=pandas&logoColor=white)
+![python](https://img.shields.io/badge/Python-FFD43B?style=for-the-badge&logo=python&logoColor=blue)
+![tensorflow](https://img.shields.io/badge/tensorflow-FF6F00?style=for-the-badge&logo=tensorflow&logoColor=blue)
+![keras](https://img.shields.io/badge/keras-D00000?style=for-the-badge&logo=keras&logoColor=white)
+![matplotlib](https://img.shields.io/badge/Matplotlib-11557c?style=for-the-badge&logo=python&logoColor=white)
+![nltk](https://img.shields.io/badge/NLTK-154f3c?style=for-the-badge&logo=python&logoColor=white)
+![scikitlearn](https://img.shields.io/badge/scikit_learn-F7931E?style=for-the-badge&logo=scikit-learn&logoColor=white)
 
 
+## License
+MIT License
 
+## Contributing members
+- [Faith Watene](https://github.com/faith-watene) 
+- [Amani Wanene](https://github.com/AmaniWanene)
+- [Evans Oyugi](https://github.com/EvansOyugi)
+- [Catherine Wangui](https://github.com/Katekui2024)
 
+  
+## Contacts
+- wanguufaith@gmail.com
+- jangkatrina@gmail.com
 
+Kindly don't hesitate to reach out to the team if you have any questions.
 
+## Repository Structure
 
-
-
-
-
-
-
-
-
-
-
-
+```
+Sentiment Analysis-Paris Olympics 2024/
+│
+└── Project Files/
+    ├── .ipynb_checkpoints
+    ├── .streamlit
+    ├── Csv Files
+    ├── Images
+    ├── Models
+    ├── Notebooks
+    ├── the_team
+    ├── LICENSE
+    ├── README.md  
+```
 
 
