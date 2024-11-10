@@ -41,7 +41,7 @@
 
 **Overview**
 
-This AI-driven detection system leverages social media data to track outbreaks of influenza and tuberculosis, two significant public health threats with widespread respiratory impacts. By analyzing real-time posts for early signs of disease clusters, the system enables WHO and health agencies to identify potential outbreaks quickly. This proactive approach aims to reduce disease spread, improve response times, and ultimately lower morbidity and mortality rates
+Influenza and tuberculosis (TB) are significant respiratory diseases with high infection rates worldwide, posing serious public health challenges. Influenza spreads rapidly in seasonal outbreaks, while TB remains a top infectious killer, especially in densely populated areas. Our AI-driven detection system uses social media data to identify early signs of these diseases, enabling health agencies like WHO to detect potential outbreaks quickly. This proactive approach helps reduce disease transmission, improve response times, and ultimately lower morbidity and mortality rates globally.
 
 **Goal**
 Early detection of potential influenza and tuberculosis outbreaks using
