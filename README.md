@@ -188,19 +188,20 @@ Kindly don't hesitate to reach out to the team if you have any questions.
 
 ## Repository Structure
 
-```
+ ```
 Disease-Outbreak-Tracking/
 │
-└── Project Files/
-    ├── .ipynb_checkpoints
-    ├── .streamlit
-    ├── Csv Files
-    ├── Images
+└── Deployment/public
+    ├── .images
     ├── Models
-    ├── Notebooks
-    ├── the_team
-    ├── LICENSE
-    ├── README.md  
+    ├── data
+    ├── Data Report.docx
+    ├── LICENCE
+    ├── README.md
+    ├── diseases.ipynb
+    ├── presentation.pdf
+    ├── requirements.txt 
 ```
+
 
 
